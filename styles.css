@@ -42,7 +42,7 @@ align-items: center;
 
 .ico {
     transition: 0.3s;
-    box-shadow: blue;
+    color: black;
 }
 
 .ico:hover {
