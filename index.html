@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hussain Ali</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/e852c489d9.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-    <link rel="icon" href="images/user-alt-solid.svg">
-    <title>Document</title>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hussain Ali</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/e852c489d9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+  <link rel="icon" href="images/user-alt-solid.svg">
+  <title>Document</title>
   </head>
-  <body>
-    <div class="wrapper">
-      <a href="https://github.com/hussainnaqvee/about"><img class="display-picture" src="images/profile-image.jpg"
-          alt="portfolio image">
-      </a>
-      <div class="info-wrapper">
-        <h1>HUSSAIN <span style="color:#1FA463;">ALI</span></h1>
-        <h5>MERN | Python | Selenium</h5>
-        <p>A passionate programmer who wants to get things done 🤙</p>
+
+<body>
+  <nav class="navbar sticky-top navbar-expand-lg">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item navItem">
+            <a class="nav-link" href="#" onclick="focusHome()">Home</a>
+          </li>
+          <li class="nav-item navItem">
+            <a class="nav-link" href="#" onclick="focusAbout()">About</a>
+          </li>
+          <li class="nav-item navItem">
+            <a class="nav-link" href="#" onclick="onFocus('Skills')">Skills</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="wrapper">
+    <a href="https://github.com/hussainnaqvee/about"><img class="display-picture" src="images/profile-image.jpg"
+        alt="portfolio image">
+    </a>
+    <div class="info-wrapper">
+      <h1><span class="first-letter">H</span>USSAIN <span class="first-letter">A</span>LI</h1>
+      <div class="writer-div">
+        <h5 class="type-writer"></h5><span class="cursor">|</span>
+      </div>
+      <p>A passionate programmer who wants to get things done 🤙</p>
       </div>
       <div class="Porfolio-links-icons">
         <a href="https://www.linkedin.com/in/hussainnaqvee"><i class="fa-2xl fa-brands fa-linkedin ico linkedin_ico"
@@ -31,10 +60,61 @@
             class="fa-2xl fa-brands fa-google-drive ico google_ico" aria-hidden="true"></i></a>
       </div>
     </div>
-    <hr>
-  </body>
-  <footer class="footer">
-    Hussain Ali © 2022<br>
-    <a href="mailto:hussain.naqvee@gmail.com"><i class="fa-2xl fa-regular fa-envelope google_ico"></i></a>
-  </footer>
+    <div class="row about">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-4">
+          <h3>About</h3>
+        </div>
+        <div class="col">
+          I am a Computer Science Graduate
+          from Bahria University. My area of
+          expertise is in Full Stack development,
+          Test Automation, and Data
+          Science/Machine Learning. I am
+          seeking opportunities to nourish my
+          skills while adding value to the
+          organization I work for
+        </div>
+      </div>
+      <hr>
+      <div class="row justify-content-center align-items-center">
+        <div class="col-4">
+          <h3>Education</h3>
+        </div>
+        <div class="col">
+          <h5>Bahria University, Islamabad</h5>
+          <p>CGPA:3.10<br>2018-2022</p>
+        </div>
+      </div>
+      </div>
+      <hr>
+      <script>
+        var i = 0;
+        var item = 'MERN - Python - Selenium';
+        function typeWriter() {
+          if (i < item.length) {
+            document.getElementsByClassName("type-writer")[0].innerHTML += item[i];
+            i++;
+            setTimeout(typeWriter, 100);
+          }
+          else {
+            i = 0;
+            setTimeout(typeWriter, 2000)
+            setTimeout(document.getElementsByClassName("type-writer")[0].innerHTML = '', 2000);
+          }
+        }
+        window.load = typeWriter()
+
+        const focusHome = () => { document.getElementsByClassName('display-picture')[0].focus() }
+        const focusAbout = () => { document.getElementsByClassName('about')[0].scrollIntoView() }
+      </script>
+      <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+<footer class="footer">
+  Hussain Ali © 2022<br>
+  <a href="mailto:hussain.naqvee@gmail.com"><i class="fa-2xl fa-regular fa-envelope google_ico"></i></a>
+</footer>
+
 </html>
